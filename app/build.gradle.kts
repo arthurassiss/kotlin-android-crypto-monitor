@@ -3,12 +3,16 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = "8.4"
+}
+
 android {
-    namespace = "carreiras.com.github.cryptomonitor"
+    namespace = "br.com.github.arthurassiss"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "carreiras.com.github.cryptomonitor"
+        applicationId = "br.com.github.arthurassiss"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -50,7 +54,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -68,10 +71,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation("androidx.appcompat:appcompat:1.7.0")
-
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.activity:activity-ktx:1.7.0")
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 }
